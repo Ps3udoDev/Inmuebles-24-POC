@@ -1,0 +1,183 @@
+generator client {
+  provider   = "prisma-client"
+  output     = "../src/lib/generated/prisma"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model caracteristica {
+  caracteristica_id       Int                       @id @default(autoincrement())
+  nombre                  String                    @unique @db.VarChar(100)
+  icono                   String?                   @db.VarChar(50)
+  caracteristica_inmueble caracteristica_inmueble[]
+}
+
+model caracteristica_inmueble {
+  inmueble_id       BigInt
+  caracteristica_id Int
+  caracteristica    caracteristica @relation(fields: [caracteristica_id], references: [caracteristica_id], onDelete: NoAction, onUpdate: NoAction)
+  inmueble          inmueble       @relation(fields: [inmueble_id], references: [inmueble_id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([inmueble_id, caracteristica_id])
+}
+
+model cita_visita {
+  cita_id                                   BigInt   @id @default(autoincrement())
+  inmueble_id                               BigInt
+  comprador_id                              BigInt
+  agente_id                                 BigInt?
+  fecha_hora_cita                           DateTime @db.Timestamptz(6)
+  estado_cita                               String   @db.VarChar(50)
+  notas                                     String?
+  usuario_cita_visita_agente_idTousuario    usuario? @relation("cita_visita_agente_idTousuario", fields: [agente_id], references: [usuario_id], onDelete: NoAction, onUpdate: NoAction)
+  usuario_cita_visita_comprador_idTousuario usuario  @relation("cita_visita_comprador_idTousuario", fields: [comprador_id], references: [usuario_id], onDelete: NoAction, onUpdate: NoAction)
+  inmueble                                  inmueble @relation(fields: [inmueble_id], references: [inmueble_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model favorito {
+  usuario_id     BigInt
+  inmueble_id    BigInt
+  fecha_agregado DateTime? @default(now()) @db.Timestamptz(6)
+  inmueble       inmueble  @relation(fields: [inmueble_id], references: [inmueble_id], onDelete: NoAction, onUpdate: NoAction)
+  usuario        usuario   @relation(fields: [usuario_id], references: [usuario_id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([usuario_id, inmueble_id])
+}
+
+model imagen {
+  imagen_id    BigInt   @id @default(autoincrement())
+  inmueble_id  BigInt
+  url          String   @db.VarChar(500)
+  es_principal Boolean? @default(false)
+  orden        Int?     @default(0)
+  inmueble     inmueble @relation(fields: [inmueble_id], references: [inmueble_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model inmueble {
+  inmueble_id                 BigInt                    @id @default(autoincrement())
+  tipo_inmueble_id            Int
+  tipo_transaccion_id         Int
+  agente_id                   BigInt?
+  ubicacion_id                BigInt                    @unique
+  titulo                      String                    @db.VarChar(255)
+  descripcion                 String?
+  precio                      Decimal                   @db.Decimal(15, 2)
+  moneda                      String                    @db.VarChar(5)
+  area_m2                     Decimal?                  @db.Decimal(8, 2)
+  num_habitaciones            Int?
+  num_banos                   Int?
+  fecha_publicacion           DateTime?                 @default(now()) @db.Timestamptz(6)
+  estado_publicacion          String                    @db.VarChar(50)
+  fecha_compra                DateTime?                 @db.Date
+  precio_compra               Decimal?                  @db.Decimal(15, 2)
+  tasa_apreciacion_historica  Decimal?                  @default(0.0000) @db.Decimal(5, 4)
+  tasa_apreciacion_proyectada Decimal?                  @default(0.0000) @db.Decimal(5, 4)
+  caracteristica_inmueble     caracteristica_inmueble[]
+  cita_visita                 cita_visita[]
+  favorito                    favorito[]
+  imagen                      imagen[]
+  usuario                     usuario?                  @relation(fields: [agente_id], references: [usuario_id], onDelete: NoAction, onUpdate: NoAction)
+  tipo_inmueble               tipo_inmueble             @relation(fields: [tipo_inmueble_id], references: [tipo_inmueble_id], onDelete: NoAction, onUpdate: NoAction)
+  tipo_transaccion            tipo_transaccion          @relation(fields: [tipo_transaccion_id], references: [tipo_transaccion_id], onDelete: NoAction, onUpdate: NoAction)
+  ubicacion                   ubicacion                 @relation(fields: [ubicacion_id], references: [ubicacion_id], onDelete: NoAction, onUpdate: NoAction)
+  inmueble_recurso            inmueble_recurso[]
+  mejora_inmueble             mejora_inmueble[]
+  tasacion_inmueble           tasacion_inmueble[]
+}
+
+model inmueble_recurso {
+  inmueble_id         BigInt
+  recurso_id          BigInt
+  distancia_metros    Int?
+  inmueble            inmueble            @relation(fields: [inmueble_id], references: [inmueble_id], onDelete: NoAction, onUpdate: NoAction)
+  recurso_estrategico recurso_estrategico @relation(fields: [recurso_id], references: [recurso_id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@id([inmueble_id, recurso_id])
+}
+
+model mejora_inmueble {
+  mejora_id          BigInt   @id @default(autoincrement())
+  inmueble_id        BigInt
+  descripcion        String
+  costo              Decimal  @db.Decimal(12, 2)
+  fecha_finalizacion DateTime @db.Date
+  impacto_valor      String?  @db.VarChar(100)
+  inmueble           inmueble @relation(fields: [inmueble_id], references: [inmueble_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model recurso_estrategico {
+  recurso_id        BigInt             @id @default(autoincrement())
+  tipo_facilidad_id Int
+  nombre            String             @db.VarChar(255)
+  latitud           Decimal?           @db.Decimal(9, 6)
+  longitud          Decimal?           @db.Decimal(9, 6)
+  inmueble_recurso  inmueble_recurso[]
+  tipo_facilidad    tipo_facilidad     @relation(fields: [tipo_facilidad_id], references: [tipo_facilidad_id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model rol_usuario {
+  rol_id  Int       @id @default(autoincrement())
+  nombre  String    @unique @db.VarChar(50)
+  usuario usuario[]
+}
+
+model tasacion_inmueble {
+  tasacion_id     BigInt   @id @default(autoincrement())
+  inmueble_id     BigInt
+  fecha_tasacion  DateTime @db.Date
+  valor_tasado    Decimal  @db.Decimal(15, 2)
+  fuente_tasacion String?  @db.VarChar(100)
+  inmueble        inmueble @relation(fields: [inmueble_id], references: [inmueble_id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([inmueble_id, fecha_tasacion(sort: Desc)], map: "idx_tasacion_inmueble_fecha")
+}
+
+model tipo_facilidad {
+  tipo_facilidad_id   Int                   @id @default(autoincrement())
+  nombre              String                @unique @db.VarChar(100)
+  icono               String?               @db.VarChar(50)
+  recurso_estrategico recurso_estrategico[]
+}
+
+model tipo_inmueble {
+  tipo_inmueble_id Int        @id @default(autoincrement())
+  nombre           String     @unique @db.VarChar(50)
+  inmueble         inmueble[]
+}
+
+model tipo_transaccion {
+  tipo_transaccion_id Int        @id @default(autoincrement())
+  nombre              String     @unique @db.VarChar(50)
+  inmueble            inmueble[]
+}
+
+model ubicacion {
+  ubicacion_id     BigInt    @id @default(autoincrement())
+  calle_principal  String    @db.VarChar(255)
+  numero           String?   @db.VarChar(10)
+  ciudad           String    @db.VarChar(100)
+  estado_provincia String?   @db.VarChar(100)
+  pais             String    @db.VarChar(100)
+  codigo_postal    String?   @db.VarChar(20)
+  latitud          Decimal?  @db.Decimal(9, 6)
+  longitud         Decimal?  @db.Decimal(9, 6)
+  inmueble         inmueble?
+}
+
+model usuario {
+  usuario_id                                    BigInt        @id @default(autoincrement())
+  rol_id                                        Int
+  nombre_completo                               String        @db.VarChar(255)
+  email                                         String        @unique @db.VarChar(255)
+  telefono                                      String?       @db.VarChar(20)
+  password_hash                                 String        @db.VarChar(255)
+  fecha_registro                                DateTime?     @default(now()) @db.Timestamptz(6)
+  cita_visita_cita_visita_agente_idTousuario    cita_visita[] @relation("cita_visita_agente_idTousuario")
+  cita_visita_cita_visita_comprador_idTousuario cita_visita[] @relation("cita_visita_comprador_idTousuario")
+  favorito                                      favorito[]
+  inmueble                                      inmueble[]
+  rol_usuario                                   rol_usuario   @relation(fields: [rol_id], references: [rol_id], onDelete: NoAction, onUpdate: NoAction)
+}

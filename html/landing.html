@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CasaIdeal Inmobiliaria - Homepage</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b10d",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221d10",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181611] dark:text-[#f5f3f0]">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+                <div
+                    class="mx-auto flex max-w-7xl items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f5f3f0]/20 dark:border-b-[#f5f3f0]/10 px-4 sm:px-6 lg:px-8 py-3">
+                    <div class="flex items-center gap-4 text-[#181611] dark:text-primary">
+                        <div class="size-6">
+                            <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                <path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z"
+                                    fill="currentColor" fill-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h2
+                            class="text-[#181611] dark:text-[#f5f3f0] text-lg font-bold leading-tight tracking-[-0.015em]">
+                            CasaIdeal Inmobiliaria</h2>
+                    </div>
+                    <div class="hidden md:flex flex-1 justify-end gap-8">
+                        <div class="flex items-center gap-9">
+                            <a class="text-[#181611] dark:text-[#f5f3f0] text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Comprar</a>
+                            <a class="text-[#181611] dark:text-[#f5f3f0] text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Alquilar</a>
+                            <a class="text-[#181611] dark:text-[#f5f3f0] text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Servicios</a>
+                            <a class="text-[#181611] dark:text-[#f5f3f0] text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Sobre Nosotros</a>
+                            <a class="text-[#181611] dark:text-[#f5f3f0] text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary transition-colors"
+                                href="#">Contacto</a>
+                        </div>
+                        <button
+                            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#181611] text-sm font-bold leading-normal tracking-[0.015em]">
+                            <span class="truncate">Publica tu Propiedad</span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <section class="w-full py-20 px-4 sm:px-6 lg:px-8">
+                    <div class="mx-auto max-w-7xl">
+                        <div class="flex min-h-[480px] flex-col gap-8 rounded-xl bg-cover bg-center bg-no-repeat items-center justify-center p-8"
+                            data-alt="Luxurious modern home with large windows and a swimming pool at dusk."
+                            style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAl5VxZbgJjPPzKioSJ-sWt0378H9Q2fWPg5ZU4FVTT6SghFn5WSWIKPy-7wXl089_yyBuJ61wgorr9l6DsuN0i7w_ng9-gxxARWWSqd1HJXyvTW7uzw_n4ZaXNTLTPy2vpK3UnOzgoNqnswNGdkpav6RDB0FGwLcZbyji0aX8nZAgA20XgEclUwrdZOIaB-jXMunf6vONDhxLmmyrMylzRXb0Vd8av3nosLR5Sod3O2cNLLrcIJXHt3bCWFazfrBltvbRc7e_6w6A");'>
+                            <div class="flex flex-col gap-2 text-center">
+                                <h1
+                                    class="text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl">
+                                    Tu Hogar Ideal te Espera</h1>
+                                <h2 class="text-white text-base font-normal leading-normal max-w-2xl">Encuentra la
+                                    propiedad de tus sueños con nuestra ayuda experta. Busca entre miles de listados
+                                    para comprar o alquilar.</h2>
+                            </div>
+                            <div class="flex-wrap gap-3 flex justify-center">
+                                <button
+                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-[#181611] text-base font-bold leading-normal tracking-[0.015em]">
+                                    <span class="truncate">Buscar Propiedades</span>
+                                </button>
+                                <button
+                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-[#f5f3f0] text-[#181611] text-base font-bold leading-normal tracking-[0.015em]">
+                                    <span class="truncate">Contactar un Agente</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-background-light dark:bg-background-dark/50 rounded-lg shadow-lg p-6 -mt-16 mx-auto max-w-5xl z-10 relative">
+                            <div class="flex flex-col md:flex-row gap-4 items-center justify-center">
+                                <button
+                                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f5f3f0] dark:bg-background-dark/80 px-4">
+                                    <p class="text-[#181611] dark:text-[#f5f3f0] text-sm font-medium leading-normal">
+                                        Tipo de Propiedad</p>
+                                    <span
+                                        class="material-symbols-outlined text-[#181611] dark:text-[#f5f3f0]">expand_more</span>
+                                </button>
+                                <button
+                                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f5f3f0] dark:bg-background-dark/80 px-4">
+                                    <p class="text-[#181611] dark:text-[#f5f3f0] text-sm font-medium leading-normal">
+                                        Área</p>
+                                    <span
+                                        class="material-symbols-outlined text-[#181611] dark:text-[#f5f3f0]">expand_more</span>
+                                </button>
+                                <button
+                                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f5f3f0] dark:bg-background-dark/80 px-4">
+                                    <p class="text-[#181611] dark:text-[#f5f3f0] text-sm font-medium leading-normal">
+                                        Rango de Precio</p>
+                                    <span
+                                        class="material-symbols-outlined text-[#181611] dark:text-[#f5f3f0]">expand_more</span>
+                                </button>
+                                <button
+                                    class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f5f3f0] dark:bg-background-dark/80 px-4">
+                                    <p class="text-[#181611] dark:text-[#f5f3f0] text-sm font-medium leading-normal">
+                                        Comprar / Alquilar</p>
+                                    <span
+                                        class="material-symbols-outlined text-[#181611] dark:text-[#f5f3f0]">expand_more</span>
+                                </button>
+                                <button
+                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-[#181611] text-base font-bold leading-normal tracking-[0.015em] flex-grow md:flex-grow-0">
+                                    <span class="truncate">Buscar</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="w-full py-20 px-4 sm:px-6 lg:px-8">
+                    <div class="mx-auto max-w-7xl">
+                        <h2
+                            class="text-[#181611] dark:text-[#f5f3f0] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-5 pt-5 text-center sm:text-left">
+                            Propiedades Destacadas</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div
+                                class="flex flex-col rounded-xl overflow-hidden bg-white dark:bg-background-dark/50 shadow-md">
+                                <div class="relative">
+                                    <img class="h-56 w-full object-cover"
+                                        data-alt="Modern suburban house with a well-manicured lawn"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKw65pwGGZCLM1rCQYTTE2F1jXboD0Hu9t_orlm1Ym7OfVEmNrsERiW7Bzw8U8_2TG1iU5G8GTNKQksPZ0O3VUR44RXftQmz6pckiSQpg0qQYYgmqzqY8WvTD5C_eOF8bnNQdrtevAsNv1GYC3yr7bnkhq6aXk-s3O0usZulTn77kK6sqHKL3XBpYGloZ_skb4ALdIYZnXg53MNnmsteUm5RUpoxXciBTu1tbH1qmtNHvYQatUovbTP228kNU_dezImMSkx_WWYlE" />
+                                    <div
+                                        class="absolute top-3 right-3 bg-white/20 backdrop-blur-sm rounded-full p-2 cursor-pointer">
+                                        <span class="material-symbols-outlined text-white">favorite_border</span>
+                                    </div>
+                                </div>
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <p class="text-2xl font-bold text-primary">$450,000</p>
+                                            <p class="text-sm text-gray-600 dark:text-gray-300">Madrid, España</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="grid grid-cols-3 gap-4 mt-4 border-t border-gray-200 dark:border-gray-700 pt-4 text-center">
+                                        <div class="flex flex-col items-center">
+                                            <span class="material-symbols-outlined text-primary mb-1">bed</span>
+                                            <p class="text-sm font-medium">3 Dorms</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <span class="material-symbols-outlined text-primary mb-1">bathtub</span>
+                                            <p class="text-sm font-medium">2 Baños</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <span class="material-symbols-outlined text-primary mb-1">square_foot</span>
+                                            <p class="text-sm font-medium">180 m²</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col rounded-xl overflow-hidden bg-white dark:bg-background-dark/50 shadow-md">
+                                <div class="relative">
+                                    <img class="h-56 w-full object-cover"
+                                        data-alt="Contemporary house with a sleek, minimalist design"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_XpMWzVUJgSPU3LknG1xEPuWR28VAO8dKMtylTMm1XMjHVi3v1Bf-b9QIBFfwCZR_KXbD1Ii0G_LYkoP9kICtgwlKLKeLPWqqX7SCcqhb4pTWEhG-R-Jf1vycMi3F2wb9QF7F4AB5OD5NLDqMdMa1vKx0NYtGbff0G5Ke36HPHBW5wRCFiWhI7kcYXbPPevmxkdrAHbL1--u8ZCcnA-ptHZUpNZqQxSzIdjKG2vWZiCm9ZfjpfY2bcgUO9jxodouSYwXnbcNqBgY" />
+                                    <div
+                                        class="absolute top-3 right-3 bg-white/20 backdrop-blur-sm rounded-full p-2 cursor-pointer">
+                                        <span class="material-symbols-outlined text-white">favorite</span>
+                                    </div>
+                                </div>
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <p class="text-2xl font-bold text-primary">$2,500<span
+                                                    class="text-base font-normal text-gray-500 dark:text-gray-400">/mes</span>
+                                            </p>
+                                            <p class="text-sm text-gray-600 dark:text-gray-300">Barcelona, España</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="grid grid-cols-3 gap-4 mt-4 border-t border-gray-200 dark:border-gray-700 pt-4 text-center">
+                                        <div class="flex flex-col items-center">
+                                            <span class="material-symbols-outlined text-primary mb-1">bed</span>
+                                            <p class="text-sm font-medium">2 Dorms</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <span class="material-symbols-outlined text-primary mb-1">bathtub</span>
+                                            <p class="text-sm font-medium">2 Baños</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <span class="material-symbols-outlined text-primary mb-1">square_foot</span>
+                                            <p class="text-sm font-medium">110 m²</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-col rounded-xl overflow-hidden bg-white dark:bg-background-dark/50 shadow-md">
+                                <div class="relative">
+                                    <img class="h-56 w-full object-cover"
+                                        data-alt="Charming villa with a rustic facade and a garden"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcPBpxrwP07OhbfStfTfbMWPkly5jdz6b0vnUfp17biW3AZOv7ISrxKdJYqaRTN52RZcl1hPY26B9i-maJcT9E000J1EYzihxykJw4V8S55o-3fVeJj_QcV50oe58JYu9k3Mc4WlcnyDBr5ggcU3Y7OvmK0waQTwfmoISZO0jW21hBeEIgpDWyDbjiSEsDTb3hqCwtjKDTi4gpSE2JiP3PCn2P5MeJilzestsQ3MMANmjwf_HoK8GVr2yK06oOzVIxS922kmtPmY0" />
+                                    <div
+                                        class="absolute top-3 right-3 bg-white/20 backdrop-blur-sm rounded-full p-2 cursor-pointer">
+                                        <span class="material-symbols-outlined text-white">favorite_border</span>
+                                    </div>
+                                </div>
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <div class="flex justify-between items-start">
+                                        <div>
+                                            <p class="text-2xl font-bold text-primary">$780,000</p>
+                                            <p class="text-sm text-gray-600 dark:text-gray-300">Valencia, España</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="grid grid-cols-3 gap-4 mt-4 border-t border-gray-200 dark:border-gray-700 pt-4 text-center">
+                                        <div class="flex flex-col items-center">
+                                            <span class="material-symbols-outlined text-primary mb-1">bed</span>
+                                            <p class="text-sm font-medium">5 Dorms</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <span class="material-symbols-outlined text-primary mb-1">bathtub</span>
+                                            <p class="text-sm font-medium">4 Baños</p>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <span class="material-symbols-outlined text-primary mb-1">square_foot</span>
+                                            <p class="text-sm font-medium">320 m²</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="w-full py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-background-dark/50">
+                    <div class="mx-auto max-w-7xl text-center">
+                        <h2
+                            class="text-[#181611] dark:text-[#f5f3f0] text-3xl font-bold leading-tight tracking-[-0.015em]">
+                            Nuestros Servicios</h2>
+                        <p class="mt-4 max-w-2xl mx-auto text-gray-600 dark:text-gray-300">Ofrecemos un conjunto
+                            completo de servicios para facilitar su experiencia inmobiliaria.</p>
+                        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+                            <div class="flex flex-col items-center">
+                                <div class="bg-primary/20 rounded-full p-5 mb-4">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-4xl">real_estate_agent</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2 dark:text-white">Venta de Propiedades</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Le ayudamos a encontrar el comprador
+                                    perfecto y a conseguir el mejor precio para su propiedad.</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="bg-primary/20 rounded-full p-5 mb-4">
+                                    <span class="material-symbols-outlined text-primary text-4xl">apartment</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2 dark:text-white">Gestión de Alquileres</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Gestionamos todo el proceso de alquiler,
+                                    desde la búsqueda de inquilinos hasta la administración del contrato.</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="bg-primary/20 rounded-full p-5 mb-4">
+                                    <span class="material-symbols-outlined text-primary text-4xl">gavel</span>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2 dark:text-white">Asesoramiento Legal</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Nuestro equipo de expertos le proporcionará
+                                    asesoramiento legal completo en cada paso de la transacción.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="w-full py-20 px-4 sm:px-6 lg:px-8">
+                    <div class="mx-auto max-w-4xl text-center">
+                        <h2 class="text-3xl font-bold mb-8 dark:text-white">Lo que dicen nuestros clientes</h2>
+                        <div class="relative">
+                            <div class="bg-white dark:bg-background-dark/50 rounded-xl shadow-lg p-8">
+                                <img alt="Client photo"
+                                    class="w-24 h-24 rounded-full mx-auto -mt-20 mb-4 border-4 border-white dark:border-background-dark/50"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcoGDMImwAwbgqVszDZCPSjOZW8RahG4s9HZaV1M8JOcir-K6ujMyOKpCXbpHQYZT2ARwD25I9kNh2lb5Un1-ltamFL6McKPxHks6oWKfYZLGsBSNKXNsq_B2DPTaztSwt2r97koEZUPQKP-N-Uk7BKqk0AUwIuQQZlDhDfkw0foVT0Rn-GNXAEsTSlVpanhTRd3saSIayFc-te7r-tVPji9r9Xkgi3WW44TjR7dmKFimhzpNAONmLe7w6IpkOuIjzCRBOUJFGSrk" />
+                                <p class="text-gray-600 dark:text-gray-300 italic">"El equipo de CasaIdeal fue
+                                    increíblemente profesional y nos ayudó a encontrar la casa de nuestros sueños en
+                                    tiempo récord. ¡No podríamos estar más felices!"</p>
+                                <p class="mt-4 font-bold text-[#181611] dark:text-white">Ana y Carlos García</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Compradores Satisfechos</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="w-full py-20">
+                    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div
+                            class="bg-primary/90 dark:bg-primary/80 rounded-xl p-12 text-center text-white flex flex-col items-center">
+                            <h2 class="text-3xl font-bold text-[#181611]">¿Listo para encontrar su próximo hogar?</h2>
+                            <p class="mt-4 max-w-2xl text-[#181611]/80">Hable con uno de nuestros agentes expertos hoy y
+                                dé el primer paso hacia la propiedad de sus sueños.</p>
+                            <button
+                                class="mt-8 flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-[#181611] text-white text-base font-bold leading-normal tracking-[0.015em]">
+                                <span class="truncate">Contactar un Agente</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="bg-white dark:bg-background-dark/50 border-t border-gray-200 dark:border-gray-800">
+                <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="col-span-2 md:col-span-1">
+                            <div class="flex items-center gap-4 text-[#181611] dark:text-primary">
+                                <div class="size-6">
+                                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd"
+                                            d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z"
+                                            fill="currentColor" fill-rule="evenodd"></path>
+                                    </svg>
+                                </div>
+                                <h2 class="text-[#181611] dark:text-[#f5f3f0] text-lg font-bold">CasaIdeal Inmobiliaria
+                                </h2>
+                            </div>
+                            <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">Su socio de confianza en el sector
+                                inmobiliario.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold tracking-wider uppercase text-sm dark:text-white">Navegación</h3>
+                            <ul class="mt-4 space-y-2">
+                                <li><a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                                        href="#">Comprar</a></li>
+                                <li><a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                                        href="#">Alquilar</a></li>
+                                <li><a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                                        href="#">Servicios</a></li>
+                                <li><a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary"
+                                        href="#">Sobre Nosotros</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold tracking-wider uppercase text-sm dark:text-white">Contacto</h3>
+                            <ul class="mt-4 space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                                <li>Calle Falsa 123, Madrid</li>
+                                <li>+34 123 456 789</li>
+                                <li>contacto@casaideal.es</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold tracking-wider uppercase text-sm dark:text-white">Síganos</h3>
+                            <div class="flex space-x-4 mt-4">
+                                <a class="text-gray-400 hover:text-primary dark:hover:text-primary" href="#">
+                                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+                                        <path clip-rule="evenodd"
+                                            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                            fill-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                                <a class="text-gray-400 hover:text-primary dark:hover:text-primary" href="#">
+                                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+                                        <path
+                                            d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a class="text-gray-400 hover:text-primary dark:hover:text-primary" href="#">
+                                    <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+                                        <path clip-rule="evenodd"
+                                            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.795 2.013 10.148 2 12.315 2zM12 7a5 5 0 100 10 5 5 0 000-10zm0-2a7 7 0 110 14 7 7 0 010-14zm6.406-2.34a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"
+                                            fill-rule="evenodd"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="mt-8 border-t border-gray-200 dark:border-gray-800 pt-8 text-center text-sm text-gray-400">
+                        <p>© 2024 CasaIdeal Inmobiliaria. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

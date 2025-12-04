@@ -1,0 +1,786 @@
+# 🏠 CASAIDEAL INMOBILIARIA - CÓDIGO COMPLETO
+# Copia y pega cada sección en su archivo correspondiente
+
+# ============================================================================
+# ARCHIVO: src/app/globals.css
+# ============================================================================
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.5rem;
+  
+  /* CasaIdeal Color Palette - Light Mode */
+  --background: 0 0% 97.5%; /* #f8f7f5 */
+  --foreground: 25 30% 8%; /* #181611 */
+  
+  --primary: 43 93% 50%; /* #f2b10d - Golden/Yellow */
+  --primary-foreground: 25 30% 8%; /* #181611 */
+  
+  --secondary: 25 15% 96%; /* #f5f3f0 */
+  --secondary-foreground: 25 30% 8%; /* #181611 */
+  
+  --muted: 25 15% 96%;
+  --muted-foreground: 25 10% 45%;
+  
+  --accent: 43 93% 50%;
+  --accent-foreground: 25 30% 8%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --border: 25 15% 90%;
+  --input: 25 15% 90%;
+  --ring: 43 93% 50%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 25 30% 8%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 25 30% 8%;
+}
+
+.dark {
+  /* CasaIdeal Color Palette - Dark Mode */
+  --background: 30 25% 9%; /* #221d10 */
+  --foreground: 25 15% 96%; /* #f5f3f0 */
+  
+  --primary: 43 93% 50%; /* #f2b10d */
+  --primary-foreground: 25 30% 8%; /* #181611 */
+  
+  --secondary: 30 20% 15%;
+  --secondary-foreground: 25 15% 96%;
+  
+  --muted: 30 20% 15%;
+  --muted-foreground: 25 10% 65%;
+  
+  --accent: 43 93% 50%;
+  --accent-foreground: 25 30% 8%;
+  
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  
+  --border: 25 15% 20%;
+  --input: 25 15% 20%;
+  --ring: 43 93% 50%;
+  
+  --card: 30 25% 12%;
+  --card-foreground: 25 15% 96%;
+  
+  --popover: 30 25% 12%;
+  --popover-foreground: 25 15% 96%;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+# ============================================================================
+# ARCHIVO: src/app/layout.tsx
+# ============================================================================
+
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "CasaIdeal Inmobiliaria - Tu Hogar Ideal te Espera",
+  description:
+    "Encuentra la propiedad de tus sueños con nuestra ayuda experta. Busca entre miles de listados para comprar o alquilar.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="es" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/app/page.tsx
+# ============================================================================
+
+import { Header } from "@/components/organisms/header";
+import { HeroSection } from "@/components/organisms/hero-section";
+import { FeaturesSection } from "@/components/organisms/features-section";
+import { PropertiesSection } from "@/components/organisms/properties-section";
+import { TestimonialsSection } from "@/components/organisms/testimonials-section";
+import { CTASection } from "@/components/organisms/cta-section";
+import { Footer } from "@/components/organisms/footer";
+
+export default function HomePage() {
+  return (
+    <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+      <div className="flex h-full grow flex-col">
+        <Header />
+        <main>
+          <HeroSection />
+          <FeaturesSection />
+          <PropertiesSection />
+          <TestimonialsSection />
+          <CTASection />
+        </main>
+        <Footer />
+      </div>
+    </div>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/components/atoms/logo.tsx
+# ============================================================================
+
+import { cn } from "@/lib/utils";
+
+interface LogoProps {
+  className?: string;
+}
+
+export function Logo({ className }: LogoProps) {
+  return (
+    <svg
+      className={cn("size-6", className)}
+      fill="none"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z"
+        fill="currentColor"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/components/molecules/property-card.tsx
+# ============================================================================
+
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { MapPin, Bed, Bath, Maximize } from "lucide-react";
+import Image from "next/image";
+
+interface PropertyCardProps {
+  title: string;
+  location: string;
+  price: string;
+  bedrooms: number;
+  bathrooms: number;
+  area: string;
+  imageUrl: string;
+  type: "Venta" | "Alquiler";
+}
+
+export function PropertyCard({
+  title,
+  location,
+  price,
+  bedrooms,
+  bathrooms,
+  area,
+  imageUrl,
+  type,
+}: PropertyCardProps) {
+  return (
+    <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <div className="relative h-48 w-full">
+        <Image
+          src={imageUrl}
+          alt={title}
+          fill
+          className="object-cover"
+        />
+        <Badge className="absolute top-4 left-4 bg-primary text-primary-foreground">
+          {type}
+        </Badge>
+      </div>
+      <CardContent className="p-4">
+        <h3 className="font-bold text-lg mb-2 line-clamp-1">{title}</h3>
+        <div className="flex items-center gap-2 text-muted-foreground mb-3">
+          <MapPin className="size-4" />
+          <span className="text-sm line-clamp-1">{location}</span>
+        </div>
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center gap-1">
+              <Bed className="size-4" />
+              <span>{bedrooms}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Bath className="size-4" />
+              <span>{bathrooms}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Maximize className="size-4" />
+              <span>{area}</span>
+            </div>
+          </div>
+        </div>
+        <div className="text-2xl font-bold text-primary">{price}</div>
+      </CardContent>
+    </Card>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/components/molecules/feature-card.tsx
+# ============================================================================
+
+import { Card, CardContent } from "@/components/ui/card";
+import { LucideIcon } from "lucide-react";
+
+interface FeatureCardProps {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export function FeatureCard({
+  icon: Icon,
+  title,
+  description,
+}: FeatureCardProps) {
+  return (
+    <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <CardContent className="p-6 text-center">
+        <div className="flex justify-center mb-4">
+          <div className="p-3 rounded-full bg-primary/10">
+            <Icon className="size-8 text-primary" />
+          </div>
+        </div>
+        <h3 className="font-bold text-xl mb-2">{title}</h3>
+        <p className="text-muted-foreground">{description}</p>
+      </CardContent>
+    </Card>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/components/molecules/testimonial-card.tsx
+# ============================================================================
+
+import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+
+interface TestimonialCardProps {
+  quote: string;
+  author: string;
+  role: string;
+  imageUrl: string;
+}
+
+export function TestimonialCard({
+  quote,
+  author,
+  role,
+  imageUrl,
+}: TestimonialCardProps) {
+  return (
+    <div className="relative">
+      <Card className="shadow-lg border-none">
+        <CardContent className="p-8">
+          <Image
+            alt={`Foto de ${author}`}
+            className="w-24 h-24 rounded-full mx-auto -mt-20 mb-4 border-4 border-white dark:border-card object-cover"
+            src={imageUrl}
+            width={96}
+            height={96}
+          />
+          <p className="text-muted-foreground italic mb-4">&ldquo;{quote}&rdquo;</p>
+          <p className="mt-4 font-bold">{author}</p>
+          <p className="text-sm text-muted-foreground">{role}</p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/components/organisms/header.tsx
+# ============================================================================
+
+"use client";
+
+import Link from "next/link";
+import { Logo } from "@/components/atoms/logo";
+import { Button } from "@/components/ui/button";
+
+const navLinks = [
+  { href: "/comprar", label: "Comprar" },
+  { href: "/alquilar", label: "Alquilar" },
+  { href: "/servicios", label: "Servicios" },
+  { href: "/nosotros", label: "Sobre Nosotros" },
+  { href: "/contacto", label: "Contacto" },
+];
+
+export function Header() {
+  return (
+    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+        <Link href="/" className="flex items-center gap-4 text-foreground hover:text-primary transition-colors">
+          <Logo />
+          <h2 className="text-lg font-bold leading-tight tracking-tight">
+            CasaIdeal Inmobiliaria
+          </h2>
+        </Link>
+        
+        <nav className="hidden md:flex flex-1 justify-end gap-8">
+          <div className="flex items-center gap-9">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium hover:text-primary transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold">
+            Publica tu Propiedad
+          </Button>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/components/organisms/hero-section.tsx
+# ============================================================================
+
+"use client";
+
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+export function HeroSection() {
+  return (
+    <section className="w-full py-20 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div
+          className="flex min-h-[480px] flex-col gap-8 rounded-xl bg-cover bg-center bg-no-repeat items-center justify-center p-8"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAl5VxZbgJjPPzKioSJ-sWt0378H9Q2fWPg5ZU4FVTT6SghFn5WSWIKPy-7wXl089_yyBuJ61wgorr9l6DsuN0i7w_ng9-gxxARWWSqd1HJXyvTW7uzw_n4ZaXNTLTPy2vpK3UnOzgoNqnswNGdkpav6RDB0FGwLcZbyji0aX8nZAgA20XgEclUwrdZOIaB-jXMunf6vONDhxLmmyrMylzRXb0Vd8av3nosLR5Sod3O2cNLLrcIJXHt3bCWFazfrBltvbRc7e_6w6A")`,
+          }}
+        >
+          <div className="flex flex-col gap-2 text-center">
+            <h1 className="text-white text-4xl font-black leading-tight tracking-tight sm:text-5xl">
+              Tu Hogar Ideal te Espera
+            </h1>
+            <h2 className="text-white text-base font-normal leading-normal max-w-2xl">
+              Encuentra la propiedad de tus sueños con nuestra ayuda experta. Busca entre miles de listados para comprar o alquilar.
+            </h2>
+          </div>
+          
+          <div className="flex flex-wrap gap-3 justify-center">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold">
+              <Link href="/propiedades">Buscar Propiedades</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/components/organisms/features-section.tsx
+# ============================================================================
+
+import { FeatureCard } from "@/components/molecules/feature-card";
+import { Home, TrendingUp, Award, HeadphonesIcon } from "lucide-react";
+
+const features = [
+  {
+    icon: Home,
+    title: "Amplia Selección",
+    description:
+      "Miles de propiedades de compra y alquiler en ubicaciones privilegiadas.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Análisis de Mercado",
+    description:
+      "Información actualizada sobre tendencias y precios del mercado inmobiliario.",
+  },
+  {
+    icon: Award,
+    title: "Agentes Expertos",
+    description:
+      "Equipo profesional con años de experiencia en el sector inmobiliario.",
+  },
+  {
+    icon: HeadphonesIcon,
+    title: "Atención Personalizada",
+    description:
+      "Servicio dedicado y orientación en cada paso del proceso de compra o alquiler.",
+  },
+];
+
+export function FeaturesSection() {
+  return (
+    <section className="w-full py-20 bg-muted/30">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight mb-3">
+            ¿Por Qué Elegir CasaIdeal?
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Ofrecemos un servicio integral que va más allá de simplemente
+            mostrar propiedades.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              icon={feature.icon}
+              title={feature.title}
+              description={feature.description}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/components/organisms/properties-section.tsx
+# ============================================================================
+
+import { PropertyCard } from "@/components/molecules/property-card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+const featuredProperties = [
+  {
+    id: 1,
+    title: "Villa Moderna con Piscina",
+    location: "Pozuelo de Alarcón, Madrid",
+    price: "€ 1,250,000",
+    bedrooms: 4,
+    bathrooms: 3,
+    area: "350 m²",
+    imageUrl:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAl5VxZbgJjPPzKioSJ-sWt0378H9Q2fWPg5ZU4FVTT6SghFn5WSWIKPy-7wXl089_yyBuJ61wgorr9l6DsuN0i7w_ng9-gxxARWWSqd1HJXyvTW7uzw_n4ZaXNTLTPy2vpK3UnOzgoNqnswNGdkpav6RDB0FGwLcZbyji0aX8nZAgA20XgEclUwrdZOIaB-jXMunf6vONDhxLmmyrMylzRXb0Vd8av3nosLR5Sod3O2cNLLrcIJXHt3bCWFazfrBltvbRc7e_6w6A",
+    type: "Venta" as const,
+  },
+  {
+    id: 2,
+    title: "Apartamento Céntrico",
+    location: "Salamanca, Madrid",
+    price: "€ 2,500/mes",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: "120 m²",
+    imageUrl:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBGGXl85oDTrEyf8qrWNZN5hCtZFxYPi1uZx87x4qFdyeFoEfHhh_JBnD2Kw8MRVfO6YqQ1sMsqsq20NTlFYLs6VlSLnPiVdscnKP8MbOGbYBVt9Wv7_xI5Qc58nCdwfCUxEZPWaIqr6rj2o1a6aXZJrIzXZ0j_iJQp2r_xyvxnX3qlqCq_k2HxFyBVqw",
+    type: "Alquiler" as const,
+  },
+  {
+    id: 3,
+    title: "Casa de Campo con Jardín",
+    location: "Las Rozas, Madrid",
+    price: "€ 850,000",
+    bedrooms: 5,
+    bathrooms: 4,
+    area: "420 m²",
+    imageUrl:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCcoGDMImwAwbgqVszDZCPSjOZW8RahG4s9HZaV1M8JOcir-K6ujMyOKpCXbpHQYZT2ARwD25I9kNh2lb5Un1-ltamFL6McKPxHks6oWKfYZLGsBSNKXNsq_B2DPTaztSwt2r97koEZUPQKP-N-Uk7BKqk0AUwIuQQZlDhDfkw0foVT0Rn-GNXAEsTSlVpanhTRd3saSIayFc-te7r-tVPji9r9Xkgi3WW44TjR7dmKFimhzpNAONmLe7w6IpkOuIjzCRBOUJFGSrk",
+    type: "Venta" as const,
+  },
+];
+
+export function PropertiesSection() {
+  return (
+    <section className="w-full py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight mb-3">
+            Propiedades Destacadas
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Explore nuestra selección de las mejores propiedades disponibles en
+            este momento.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {featuredProperties.map((property) => (
+            <PropertyCard key={property.id} {...property} />
+          ))}
+        </div>
+        
+        <div className="text-center">
+          <Button asChild variant="outline" size="lg">
+            <Link href="/propiedades">Ver Todas las Propiedades</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/components/organisms/testimonials-section.tsx
+# ============================================================================
+
+import { TestimonialCard } from "@/components/molecules/testimonial-card";
+
+const testimonials = [
+  {
+    quote:
+      "El equipo de CasaIdeal fue increíblemente profesional y nos ayudó a encontrar la casa de nuestros sueños en tiempo récord. ¡No podríamos estar más felices!",
+    author: "Ana y Carlos García",
+    role: "Compradores Satisfechos",
+    imageUrl:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCcoGDMImwAwbgqVszDZCPSjOZW8RahG4s9HZaV1M8JOcir-K6ujMyOKpCXbpHQYZT2ARwD25I9kNh2lb5Un1-ltamFL6McKPxHks6oWKfYZLGsBSNKXNsq_B2DPTaztSwt2r97koEZUPQKP-N-Uk7BKqk0AUwIuQQZlDhDfkw0foVT0Rn-GNXAEsTSlVpanhTRd3saSIayFc-te7r-tVPji9r9Xkgi3WW44TjR7dmKFimhzpNAONmLe7w6IpkOuIjzCRBOUJFGSrk",
+  },
+];
+
+export function TestimonialsSection() {
+  return (
+    <section className="w-full py-20 bg-muted/30">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight mb-3">
+            Lo Que Dicen Nuestros Clientes
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Miles de familias han encontrado su hogar ideal con nuestra ayuda.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard key={index} {...testimonial} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/components/organisms/cta-section.tsx
+# ============================================================================
+
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+export function CTASection() {
+  return (
+    <section className="w-full py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="bg-primary/90 dark:bg-primary/80 rounded-xl p-12 text-center flex flex-col items-center">
+          <h2 className="text-3xl font-bold text-primary-foreground">
+            ¿Listo para encontrar su próximo hogar?
+          </h2>
+          <p className="mt-4 max-w-2xl text-primary-foreground/80">
+            Explore nuestra colección de propiedades y dé el primer paso hacia el hogar de sus sueños.
+          </p>
+          <Button
+            asChild
+            size="lg"
+            variant="secondary"
+            className="mt-8 bg-primary-foreground text-background hover:bg-primary-foreground/90 font-bold"
+          >
+            <Link href="/propiedades">Buscar Propiedades</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+# ============================================================================
+# ARCHIVO: src/components/organisms/footer.tsx
+# ============================================================================
+
+import Link from "next/link";
+import { Logo } from "@/components/atoms/logo";
+import { Facebook, Twitter, Instagram } from "lucide-react";
+
+const navigation = {
+  navegacion: [
+    { name: "Comprar", href: "/comprar" },
+    { name: "Alquilar", href: "/alquilar" },
+    { name: "Servicios", href: "/servicios" },
+    { name: "Sobre Nosotros", href: "/nosotros" },
+  ],
+  contacto: [
+    { label: "Calle Falsa 123, Madrid" },
+    { label: "+34 123 456 789" },
+    { label: "info@casaideal.com" },
+  ],
+  social: [
+    {
+      name: "Facebook",
+      href: "#",
+      icon: Facebook,
+    },
+    {
+      name: "Twitter",
+      href: "#",
+      icon: Twitter,
+    },
+    {
+      name: "Instagram",
+      href: "#",
+      icon: Instagram,
+    },
+  ],
+};
+
+export function Footer() {
+  return (
+    <footer className="bg-card border-t">
+      <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="col-span-2 md:col-span-1">
+            <div className="flex items-center gap-4">
+              <Logo className="text-primary" />
+              <h2 className="text-lg font-bold">CasaIdeal Inmobiliaria</h2>
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Su socio de confianza en el sector inmobiliario.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="font-bold tracking-wider uppercase text-sm">
+              Navegación
+            </h3>
+            <ul className="mt-4 space-y-2">
+              {navigation.navegacion.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="font-bold tracking-wider uppercase text-sm">
+              Contacto
+            </h3>
+            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+              {navigation.contacto.map((item, index) => (
+                <li key={index}>{item.label}</li>
+              ))}
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="font-bold tracking-wider uppercase text-sm">
+              Síganos
+            </h3>
+            <div className="flex space-x-4 mt-4">
+              {navigation.social.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon className="h-6 w-6" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
+          <p>© {new Date().getFullYear()} CasaIdeal Inmobiliaria. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+# ============================================================================
+# FIN DEL CÓDIGO
+# ============================================================================
+
+# INSTRUCCIONES DE INSTALACIÓN:
+
+# 1. Instala los componentes de shadcn/ui:
+bun x shadcn@latest add button
+bun x shadcn@latest add card
+bun x shadcn@latest add badge
+
+# 2. Copia cada sección de código al archivo correspondiente
+
+# 3. Ejecuta el proyecto:
+bun dev
+
+# ============================================================================

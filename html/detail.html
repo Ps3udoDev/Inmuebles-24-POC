@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CasaIdeal Inmobiliaria - Property Details</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b10d",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221d10",
+                        "text-primary": "#181611",
+                        "text-secondary": "#8a7e60",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="font-display bg-background-light dark:bg-background-dark text-text-primary dark:text-background-light">
+    <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <!-- TopNavBar -->
+        <header
+            class="sticky top-0 z-50 flex w-full justify-center border-b border-solid border-b-[#f5f3f0]/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+            <div class="flex items-center justify-between whitespace-nowrap px-4 sm:px-10 py-3 w-full max-w-7xl">
+                <div class="flex items-center gap-4 text-text-primary dark:text-background-light">
+                    <div class="size-6 text-primary">
+                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z">
+                            </path>
+                            <path clip-rule="evenodd"
+                                d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764ZM4.95178 32.7688L21.4543 6.30267C22.6288 4.4191 25.3712 4.41909 26.5457 6.30267L43.0534 32.777C43.0709 32.8052 43.0878 32.8338 43.104 32.8629L41.3563 33.8352C43.104 32.8629 43.1038 32.8626 43.104 32.8629L43.1051 32.865L43.1065 32.8675L43.1101 32.8739L43.1199 32.8918C43.1276 32.906 43.1377 32.9246 43.1497 32.9473C43.1738 32.9925 43.2062 33.0545 43.244 33.1299C43.319 33.2792 43.4196 33.489 43.5217 33.7317C43.6901 34.1321 44 34.9311 44 35.7391C44 37.4427 43.003 38.7775 41.8558 39.7209C40.6947 40.6757 39.1354 41.4464 37.385 42.0552C33.8654 43.2794 29.133 44 24 44C18.867 44 14.1346 43.2794 10.615 42.0552C8.86463 41.4464 7.30529 40.6757 6.14419 39.7209C4.99695 38.7775 3.99999 37.4427 3.99999 35.7391C3.99999 34.8725 4.29264 34.0922 4.49321 33.6393C4.60375 33.3898 4.71348 33.1804 4.79687 33.0311C4.83898 32.9556 4.87547 32.8935 4.9035 32.8471C4.91754 32.8238 4.92954 32.8043 4.93916 32.7889L4.94662 32.777L4.95178 32.7688ZM35.9868 29.004L24 9.77997L12.0131 29.004C12.4661 28.8609 12.9179 28.7342 13.3617 28.6282C16.4281 27.8961 20.0901 27.4783 24 27.4783C27.9099 27.4783 31.5719 27.8961 34.6383 28.6282C35.082 28.7342 35.5339 28.8609 35.9868 29.004Z"
+                                fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h2
+                        class="text-text-primary dark:text-background-light text-lg font-bold leading-tight tracking-[-0.015em]">
+                        CasaIdeal</h2>
+                </div>
+                <div class="hidden md:flex flex-1 justify-end items-center gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-text-primary dark:text-background-light text-sm font-medium leading-normal"
+                            href="#">Buscar</a>
+                        <a class="text-text-primary dark:text-background-light text-sm font-medium leading-normal"
+                            href="#">Vender</a>
+                        <a class="text-text-primary dark:text-background-light text-sm font-medium leading-normal"
+                            href="#">Nosotros</a>
+                        <a class="text-text-primary dark:text-background-light text-sm font-medium leading-normal"
+                            href="#">Contacto</a>
+                    </div>
+                    <button
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-text-primary text-sm font-bold leading-normal tracking-[0.015em]">
+                        <span class="truncate">Acceso Clientes</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="flex flex-1 justify-center py-5 sm:py-10">
+            <div class="flex flex-col w-full max-w-7xl px-4">
+                <!-- Breadcrumbs -->
+                <div class="flex flex-wrap gap-2 px-4 mb-4">
+                    <a class="text-text-secondary text-base font-medium leading-normal" href="#">Inicio</a>
+                    <span class="text-text-secondary text-base font-medium leading-normal">/</span>
+                    <a class="text-text-secondary text-base font-medium leading-normal" href="#">Propiedades en
+                        Venta</a>
+                    <span class="text-text-secondary text-base font-medium leading-normal">/</span>
+                    <span
+                        class="text-text-primary dark:text-background-light text-base font-medium leading-normal">Chalet
+                        de lujo en La Moraleja</span>
+                </div>
+                <!-- Page Heading & Price -->
+                <div class="flex flex-wrap justify-between items-start gap-3 px-4 mb-6">
+                    <div class="flex min-w-72 flex-col gap-2">
+                        <p
+                            class="text-text-primary dark:text-background-light text-4xl font-black leading-tight tracking-[-0.033em]">
+                            Chalet Independiente de Lujo en La Moraleja</p>
+                        <p class="text-text-secondary text-base font-normal leading-normal">Calle de la Estafeta, 24,
+                            Alcobendas, Madrid</p>
+                    </div>
+                    <h1
+                        class="text-text-primary dark:text-background-light text-4xl font-bold leading-tight tracking-tight text-left">
+                        2.850.000 €</h1>
+                </div>
+                <!-- Image Gallery -->
+                <div class="w-full h-[600px] grid grid-cols-4 grid-rows-2 gap-4 px-4 mb-10">
+                    <div class="col-span-4 md:col-span-2 row-span-2 rounded-xl overflow-hidden">
+                        <img alt="Vista exterior principal de la villa de lujo"
+                            class="w-full h-full object-cover cursor-pointer"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd0hdJ7uqp9LZJQVr_xL0WxaBv7u7z1qYS-zNolferGO1UZLktfmDNlFzTI35mP3rHfHtlFok8QX8NFkplu_-rvlkB-YtE-ZbmHgmFv8MHKO33q5RjR3u44twNZlFgHVSZWtGnzkUfkEzS18fgJHkzizjOfl94QoWJu_ZtrEygDzzEDW-7-XqoUHWCGfk9LJMToRhvVtlrrgXNaTN2We0VfTLMyvvg1G91wXFz5VAg6IKgDhtCQUGiIfVKf2Mk3-eiKawYUUvJDa0" />
+                    </div>
+                    <div class="col-span-2 md:col-span-1 rounded-xl overflow-hidden">
+                        <img alt="Salón principal con grandes ventanales"
+                            class="w-full h-full object-cover cursor-pointer"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZrpicIysPzfqBrTsuM9Yabcc0bJcMla7JHN2uP14wYkt60cqIqzhh4ifI8dQqBSlqGTmVKNbqn6yc8w3zE9IVPwQXucolVOAwje4rPk-dPYIVFsrkVlMUHC-mRIdO63bJH75BnyB2NCtdtlxFZD4shjOmd41dqJ85rP2zrnQceKVC3HxueHwPWdWAip4clrJNO3rIa1vd4cRxtBMkLQ-qt-34VvaQ0aTUtUV5WlINf5Ij47lf2tbXlFUq3YORZ2IuiYkcWcslOCc" />
+                    </div>
+                    <div class="col-span-2 md:col-span-1 rounded-xl overflow-hidden">
+                        <img alt="Cocina moderna con isla central" class="w-full h-full object-cover cursor-pointer"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPn38Iij06o_CBsmQ61RKMX8-rzm226ceBBaQTLSYUtKc8IFMjTJyDBs5XTuzStQnb-a-WODor84VTquxnqF-HNCAHN1ERyUDTuXWwbTN3egy0LpwtEfqOQRa1WqzTcesOHEMdGpPr086Sc8ZvnyKun7zS4h-TqZksCbP5y-AHbq743T8X2FYliauE0nETZB720OYzrtgBWNfJa7kggghjgOBcyDzsIpxamepORbUR6fZalG0zzyNUB2iErprxJuNKeRkDa0aLlPM" />
+                    </div>
+                    <div class="col-span-2 md:col-span-1 rounded-xl overflow-hidden">
+                        <img alt="Dormitorio principal con vistas al jardín"
+                            class="w-full h-full object-cover cursor-pointer"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuApOsBKQHeMHq3ux79rzExEqYn9LYDQsivL0HUdMOq2fEVfRKq_7nT11FaAhAiLtaC1zVikdoLLoQd8UFCC4yUtCkrylCCl798ikiBwfWVNhyZADj_886nPaZAM3hL5TfN4VVvlxsXNe5m9nsKByPADUOBYCIpeAlm85ld3lr08STtpGBLXaHSc9jKOnONqBTv4zcLqvAffcRSbko_e5TVG_nusGHznsQTYSoSzSHSd3wp7YbznKRv8wmATAouLaeL7koD2Qri4-kI" />
+                    </div>
+                    <div class="col-span-2 md:col-span-1 rounded-xl overflow-hidden">
+                        <img alt="Piscina exterior y zona de jardín" class="w-full h-full object-cover cursor-pointer"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO6Xh53GoqV0zEIqeOb5s5z5G7M2WQ_i5zEuKUAY3TZ2mUR-7shcJT9nNYEnOqmE8eQftErTtABnVwF051lvBIZRvmK2FrN86EYAbc5OygL8xj2gaQlhIW97Ovmt8UuEacGNW3jMaI4MQ6d3kXBD934tWbul5rPh1q-buEZoYvbdaSpV-lFdfmYBGIi7Rcr81YWFyC6kObl_Q1PcShjAHN46e7oIWRNlaRjgyLgLDGHdiCgkRFGyTmCGTYq8k9yiJkGKyreVNowZg" />
+                    </div>
+                </div>
+                <!-- Main content: Description, Features, Map -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 px-4">
+                    <div class="lg:col-span-2">
+                        <!-- Property Characteristics -->
+                        <div class="border-b border-solid border-b-[#f5f3f0]/20 pb-6 mb-8">
+                            <h2 class="text-2xl font-bold mb-4 text-text-primary dark:text-background-light">
+                                Características Principales</h2>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div
+                                    class="flex flex-col items-center gap-2 p-4 rounded-lg bg-background-light dark:bg-background-dark shadow-sm">
+                                    <span class="material-symbols-outlined text-primary text-3xl">king_bed</span>
+                                    <span
+                                        class="font-bold text-lg text-text-primary dark:text-background-light">5</span>
+                                    <span class="text-sm text-text-secondary">Dormitorios</span>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center gap-2 p-4 rounded-lg bg-background-light dark:bg-background-dark shadow-sm">
+                                    <span class="material-symbols-outlined text-primary text-3xl">bathtub</span>
+                                    <span
+                                        class="font-bold text-lg text-text-primary dark:text-background-light">6</span>
+                                    <span class="text-sm text-text-secondary">Baños</span>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center gap-2 p-4 rounded-lg bg-background-light dark:bg-background-dark shadow-sm">
+                                    <span class="material-symbols-outlined text-primary text-3xl">square_foot</span>
+                                    <span class="font-bold text-lg text-text-primary dark:text-background-light">550
+                                        m²</span>
+                                    <span class="text-sm text-text-secondary">Construidos</span>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center gap-2 p-4 rounded-lg bg-background-light dark:bg-background-dark shadow-sm">
+                                    <span class="material-symbols-outlined text-primary text-3xl">home_work</span>
+                                    <span class="font-bold text-lg text-text-primary dark:text-background-light">2500
+                                        m²</span>
+                                    <span class="text-sm text-text-secondary">Parcela</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Description -->
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-bold mb-4 text-text-primary dark:text-background-light">Descripción
+                            </h2>
+                            <p class="text-text-secondary dark:text-gray-300 leading-relaxed">
+                                Exclusivo chalet independiente de diseño moderno en una de las mejores zonas de La
+                                Moraleja. Esta impresionante propiedad de 550 m² se asienta sobre una parcela de 2.500
+                                m² con un cuidado jardín y una piscina privada.
+                                <br /><br />
+                                La vivienda se distribuye en dos plantas. En la planta principal encontramos un amplio
+                                hall de entrada que da acceso a un espectacular salón-comedor con grandes ventanales y
+                                salida directa al porche y al jardín. La cocina, de diseño vanguardista, está totalmente
+                                equipada con electrodomésticos de alta gama y cuenta con una isla central. Completan
+                                esta planta un dormitorio de invitados en suite y un aseo de cortesía.
+                                <br /><br />
+                                La planta superior alberga la zona de descanso, con un impresionante dormitorio
+                                principal con vestidor y baño en suite, además de otros tres dormitorios, todos ellos
+                                con baño privado.
+                            </p>
+                        </div>
+                        <!-- Extra Features -->
+                        <div class="mb-8">
+                            <h2 class="text-2xl font-bold mb-4 text-text-primary dark:text-background-light">Extras</h2>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-lg bg-background-light dark:bg-background-dark shadow-sm">
+                                    <span class="material-symbols-outlined text-primary">pool</span>
+                                    <span class="font-medium text-text-primary dark:text-background-light">Piscina
+                                        privada</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-lg bg-background-light dark:bg-background-dark shadow-sm">
+                                    <span class="material-symbols-outlined text-primary">local_florist</span>
+                                    <span class="font-medium text-text-primary dark:text-background-light">Jardín
+                                        consolidado</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-lg bg-background-light dark:bg-background-dark shadow-sm">
+                                    <span class="material-symbols-outlined text-primary">garage</span>
+                                    <span class="font-medium text-text-primary dark:text-background-light">Garaje (4
+                                        plazas)</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-lg bg-background-light dark:bg-background-dark shadow-sm">
+                                    <span class="material-symbols-outlined text-primary">thermostat</span>
+                                    <span class="font-medium text-text-primary dark:text-background-light">Suelo
+                                        radiante</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-lg bg-background-light dark:bg-background-dark shadow-sm">
+                                    <span class="material-symbols-outlined text-primary">air</span>
+                                    <span class="font-medium text-text-primary dark:text-background-light">Aire
+                                        acondicionado</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-3 p-3 rounded-lg bg-background-light dark:bg-background-dark shadow-sm">
+                                    <span class="material-symbols-outlined text-primary">shield</span>
+                                    <span class="font-medium text-text-primary dark:text-background-light">Sistema de
+                                        seguridad</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Map -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4 text-text-primary dark:text-background-light">Ubicación
+                            </h2>
+                            <div class="w-full h-96 rounded-xl overflow-hidden bg-gray-200">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Mapa interactivo mostrando la ubicación de la propiedad en La Moraleja, Madrid."
+                                    data-location="Madrid, Spain"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc6V5Du0q9BNqyyCV39RRCUtg2ccKdKovDmvCtPe406zPIAkNonIwZjpxhMwib7Hvx-SefLEM5216oBKU4mZ4Kq4rV1Z41mElTWl_w1rz550maOd_HEyq0D00dRWYqXswrKTclPF8fvH6BURL5qrIpfnJAxzVAu2GLn5H3fQIGWy-M2tayk0bgxjiMwa1ZEs5cE7fYmcct9537i_XRI2pml8MpiYEXdKaEIMYqMc-lCv-3SEQhTm8aeSzxkvs-AzkOFLmPncnMR6Y" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sidebar: Contact Agent -->
+                    <div class="lg:col-span-1">
+                        <div
+                            class="sticky top-28 p-6 rounded-xl shadow-lg bg-white dark:bg-background-dark border border-gray-200 dark:border-gray-700">
+                            <h3 class="text-xl font-bold mb-4 text-text-primary dark:text-background-light">Contactar
+                                con un agente</h3>
+                            <div class="flex items-center gap-4 mb-6">
+                                <img alt="Foto del agente inmobiliario Carlos"
+                                    class="w-16 h-16 rounded-full object-cover"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp5lWY_reEif9QZwZ7MmIAu9lSnQw5HXjr1_3fFYGq5VQcLOtuwHZLkvkbmi11RtmQSzrppB5qqVcqwF1fA--3w6dwbUmQXTdb1iF5a_bvY5tNgjfNJdDqUDc3fPK8cg_M1VfZyplV6e-cHtIoMirsC1uzidEBiaAKsBTfvHt-Xk3wYnzZ7AptIqMk1UdMILRdA3WDN-vMlb4acTtAQkzh8rPobZAGm6UifEhx5mRu-wBCsR0cLsUSpFirCczK82nJX2jiVPUe0BA" />
+                                <div>
+                                    <p class="font-bold text-text-primary dark:text-background-light">Carlos Fernández
+                                    </p>
+                                    <p class="text-sm text-text-secondary">Agente especializado</p>
+                                </div>
+                            </div>
+                            <form action="#" class="space-y-4">
+                                <div>
+                                    <label class="sr-only" for="name">Nombre</label>
+                                    <input
+                                        class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-background-light dark:bg-gray-800 focus:ring-primary focus:border-primary"
+                                        id="name" placeholder="Tu nombre" type="text" />
+                                </div>
+                                <div>
+                                    <label class="sr-only" for="email">Email</label>
+                                    <input
+                                        class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-background-light dark:bg-gray-800 focus:ring-primary focus:border-primary"
+                                        id="email" placeholder="Tu email" type="email" />
+                                </div>
+                                <div>
+                                    <label class="sr-only" for="message">Mensaje</label>
+                                    <textarea
+                                        class="w-full rounded-lg border-gray-300 dark:border-gray-600 bg-background-light dark:bg-gray-800 focus:ring-primary focus:border-primary"
+                                        id="message" placeholder="Estoy interesado en esta propiedad..."
+                                        rows="4"></textarea>
+                                </div>
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-primary text-text-primary text-base font-bold"
+                                    type="submit">
+                                    <span class="material-symbols-outlined">send</span>
+                                    <span>Enviar Mensaje</span>
+                                </button>
+                                <button
+                                    class="w-full flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-primary/20 text-text-primary dark:text-primary font-bold"
+                                    type="button">
+                                    <span class="material-symbols-outlined">chat</span>
+                                    <span>Iniciar Chat en Vivo</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel -->
+                <div class="mt-16 px-4">
+                    <h2 class="text-2xl font-bold mb-4 text-text-primary dark:text-background-light">Galería Completa
+                    </h2>
+                    <div
+                        class="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden pb-4">
+                        <div class="flex items-stretch p-4 gap-4">
+                            <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-80">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
+                                    data-alt="Vista exterior de la fachada moderna de la villa."
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD38VMk2m6NNfctQ4QUCAlbvng_jqATUAXmqWSIRvUJz8hXG6lrqxRTsVtaEymPt80tEkpJTBE8IAoLPjCJW_-ABgZzf6uYBGR5hie294ufc8IHWvyPMTKBiE4IQtUEDBB7dkpph4aPANh0NUqmq1BjVlNZhZmS07HmMVZT1qf5XDMA132xmPYszqLjO-Nw8wmrlY1lOdf12NFJO75r59l4jjKu6zRaSzNzC-EkW5z85Rai6v5b-LvkxGeUkbDi2irGjvYB_w7XqMw");'>
+                                </div>
+                                <p
+                                    class="text-text-primary dark:text-background-light text-base font-medium leading-normal">
+                                    Vista exterior</p>
+                            </div>
+                            <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-80">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
+                                    data-alt="Amplio salón principal con mobiliario elegante y vistas al jardín."
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBNSUPadlktEl8htnl_h9DmQpnUGcW-D9BnIoojZPYnIS7yOMPfYwfp5N6T1tFFoZjOTQvCa8Jj7_ma3rgnoYaXAD50qzAZ3g8k6suwugnYjWam50NK2-MI9ftpUeOP6Y-_NQDPPCn-g6qiuDGJ-Pqm23JuXTOdHRtO6Zs21nJlWDmfNDlSiHSAM_NFHIAAoZgTSmXzoO9F4B6VemGnPURdlEN1O1lLDtHUUOxTOZu2Oym4whSXyM-yxX5SoseiuyBCvTa6bAl_k6E");'>
+                                </div>
+                                <p
+                                    class="text-text-primary dark:text-background-light text-base font-medium leading-normal">
+                                    Salón principal</p>
+                            </div>
+                            <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-80">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
+                                    data-alt="Cocina de diseño con electrodomésticos de última generación."
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPx3kQPJFQIkNw0w7fLG_KzfiqBYd4HN6HLHfhA1JYHJCZElnTE3M6bRS2STYoBxks4u4ZpplR79ZKJl6f17zg2i9oENUPGZTfJS2sdcVMVzDlfSvpgqPQjAr_-7ZEkSI4es47VgSOO5OASK7_5WVOXyTakXZtQivE8e5aHi5GznI2CHUiEpXuztoLr-yjdAanhshtTI-K5weee6qhl5cGIFD8bWwoLpc2wboFRVUfhdNjkSt8Zh2gWcih3XD7nvUUXfB2hKpZzIQ");'>
+                                </div>
+                                <p
+                                    class="text-text-primary dark:text-background-light text-base font-medium leading-normal">
+                                    Cocina moderna</p>
+                            </div>
+                            <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-80">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
+                                    data-alt="Dormitorio principal espacioso con una cama grande y acceso a una terraza."
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD4nm7G4XEpgVp-4XUvSO5fTddtTRz5vFVnsEWJ9KHoq1ESA78chvzd7bpdq7lBrQeV3YbP96ZUq0hvoV-c9bc37TgX_qDky0P0gQ6E8QHt3toSJ192bFh7hBI-tUhTTkcwU0lt7-TU4F7knyK8tI9j9SFTBRhRV6ev7EIAud3vLQDk3LNtr7vUyf0c8qMhSDR0P9h1fUuv3tIYXYEtYkXzJiKXPBU5kf_akHlWEMCwtEQKAQRSF05mZZdMQE-an12gLYo_9aI8Y88");'>
+                                </div>
+                                <p
+                                    class="text-text-primary dark:text-background-light text-base font-medium leading-normal">
+                                    Dormitorio principal</p>
+                            </div>
+                            <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-80">
+                                <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex flex-col"
+                                    data-alt="Piscina al aire libre rodeada de césped y tumbonas."
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDFOMy9VB0sb81t9i8y2zEaBnfUgqWz2vBoSG3AyaRFxvYTUmGwDq1kSqe4O4b5RNHwuTMPboSwle71maFkv8wIKe4jQu2aeUBRzhStptCmMrHIvKYhGiN6Gng6BTejsquIsRbrF87xYe_2DgrMrfzBUJbNqAasZF3rKFc5rcgaAah6O2FGMpKvjX9C10z04iNbZ7O-8b8WNYlEdjZfKVegR4VqyXW9-ijGwUd8CQSWhpVYtbfIJ3P-Wbp__sAt3EUyb73lL8q_T3I");'>
+                                </div>
+                                <p
+                                    class="text-text-primary dark:text-background-light text-base font-medium leading-normal">
+                                    Piscina y jardín</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Floating Action Button -->
+        <button
+            class="fixed bottom-8 right-8 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full bg-primary text-text-primary shadow-lg">
+            <span class="material-symbols-outlined text-3xl">chat</span>
+        </button>
+    </div>
+</body>
+
+</html>
